@@ -2,8 +2,15 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrimeiraController;
-
+use App\Http\Controllers\ExercicioController;
 use App\Http\Controllers\ClienteController;
+
+//Rota para criar formulario ex1 
+Route::get('/exercicio1', [ExercicioController::class, 'formExercicio1']);
+//Rota para processar o formulario ex1 e mostrar o resultado
+Route::post('/exercicio1',[ExercicioController::class, 'resultadoExercicio1']);
+ 
+
 
 Route::resource('clientes', ClienteController::class);
 //Listar Clientes - GET /clientes -- Route::get('/clientes', [ClienteController::class, 'index'])
@@ -13,19 +20,6 @@ Route::resource('clientes', ClienteController::class);
 //Abrir formulário para editar registro - GET /clientes/{id_cliente}/edit --método edit
 //Salvar alterações - PUT /clientes/{id_cliente} -- método update
 //Excluir um registro - DELETE /clientes/{id_cliente} -- método destroy
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Route::get('/teste', [PrimeiraController::class, "teste"]);
 
